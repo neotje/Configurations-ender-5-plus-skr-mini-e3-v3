@@ -669,9 +669,10 @@
     #define DEFAULT_Ki_LIST {   1.38,   1.38 }
     #define DEFAULT_Kd_LIST {  68.38,  68.38 }
   #else
-    #define DEFAULT_Kp  19.41
-    #define DEFAULT_Ki   1.38
-    #define DEFAULT_Kd  68.38
+    // Autotuned PID values. M303 E0 C8 S210
+    #define DEFAULT_Kp  21.12
+    #define DEFAULT_Ki   1.78
+    #define DEFAULT_Kd  62.5
   #endif
 #endif
 
@@ -754,9 +755,17 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 481.83
-  #define DEFAULT_bedKi 69.20
-  #define DEFAULT_bedKd 838.75
+  
+  // TODO: BED PID tuning
+  // Creality Ender-5 Plus, auto tune result of: M303 E-1 S60 C10
+
+  #define DEFAULT_bedKp 180.81
+  #define DEFAULT_bedKi 33.81
+  #define DEFAULT_bedKd 644.63
+  
+  //#define DEFAULT_bedKp 481.83
+  //#define DEFAULT_bedKi 69.20
+  //#define DEFAULT_bedKd 838.75
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
