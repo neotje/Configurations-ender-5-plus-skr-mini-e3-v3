@@ -1,5 +1,7 @@
 # Biqu Hurakan Configuration
 
+*Note:* Early Hurakan printers have a raised bed power switch, so enable (uncomment) `#define PROBING_MARGIN_BACK` in `Configuration_adv.h` to prevent the hotend from potentially colliding with the switch assembly while probing.
+
 The Biqu Hurakan ships with a BigTreeTech Manta M4P motherboard which includes an integrated BigTreeTech CB1 single board computer running Klipper. See below for instructions on how to update the CB1 to run OctoPrint.
 
 # Table of Contents
@@ -18,7 +20,7 @@ The Biqu Hurakan ships with a BigTreeTech Manta M4P motherboard which includes a
 
 # Update Hurakan CB1 Image Defaults
 
-⚠️ Start with the latest `Hurakan_Debian11_Mainsail_kernel5.16_YYYYMMDD.img.xz` image from [bigtreetech/CB1/releases](https://github.com/bigtreetech/CB1/releases). ⚠️
+⚠️ Start with the latest `CB1_Debian11_Klipper_kernel*.img.xz` (full) image from [bigtreetech/CB1/releases](https://github.com/bigtreetech/CB1/releases). ⚠️
 
 ## SSH into to the CB1
 
